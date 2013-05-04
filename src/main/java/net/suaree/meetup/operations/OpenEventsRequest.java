@@ -2,6 +2,7 @@ package net.suaree.meetup.operations;
 
 import net.suaree.meetup.model.Category;
 import net.suaree.meetup.model.SearchEventStatus;
+import net.suaree.meetup.model.TimeRange;
 import net.suaree.meetup.model.TextFormat;
 import net.suaree.meetup.serialization.ConversionHelper;
 import org.apache.http.NameValuePair;
@@ -37,6 +38,8 @@ public class OpenEventsRequest extends RequestBase {
     private Double lng;
 
     private Integer radiusInMiles;
+
+    private TimeRange timeRange;
 
     private SearchEventStatus status;
 
@@ -134,6 +137,14 @@ public class OpenEventsRequest extends RequestBase {
         this.radiusInMiles = radiusInMiles;
     }
 
+    public TimeRange getTimeRange() {
+        return timeRange;
+    }
+
+    public void setTimeRange(TimeRange timeRange) {
+        this.timeRange = timeRange;
+    }
+
     public SearchEventStatus getStatus() {
         return status;
     }
@@ -227,6 +238,7 @@ public class OpenEventsRequest extends RequestBase {
 
         addParameter("radius", radiusInMiles, params);
 
+        addParameter("time", timeRange, params);
         addParameter("status", status, params);
 
         addParameter("text_format", textFormat, params);
