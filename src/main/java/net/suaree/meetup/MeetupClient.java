@@ -103,6 +103,8 @@ public class MeetupClient {
                 log.debug(String.format("GET %s", get.getURI()));
             }
 
+            get.addHeader("Accept-Charset", "UTF-8");
+
             HttpResponse response = httpClient.execute(get);
             InputStream in = response.getEntity().getContent();
             Reader reader;
