@@ -117,7 +117,7 @@ public class MeetupClient {
                 }
             }
 
-            reader = new InputStreamReader(in);
+            reader = new InputStreamReader(in, "UTF-8");
 
             if (log.isTraceEnabled()) {
                 // If tracing is enabled for this class, wrap the InputStreamReader in a LoggingInputStreamReader so we
